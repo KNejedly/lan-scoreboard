@@ -1,0 +1,48 @@
+name: Testy a GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lan-pages
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+        env:
+          LAN_TEST_OCR: '1'
+      - name: Nastavit zdroj živých výsledků
+        env:
+          LIVE_FEED: ${{ vars.LAN_PUBLIC_FEED }}
+        shell: python
+        run: |
+          import html, os, pathlib
+          feed = os.environ.get('LIVE_FEED','')
+          if feed:
+              if not feed.startswith('https://'): raise ValueError('Zdroj musí mít HTTPS')
+              p=pathlib.Path('web/index.html')
+              p.write_text(p.read_text().replace('<head>', '<head><meta name="lan-feed" content="'+html.escape(feed,quote=True)+'">'))
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

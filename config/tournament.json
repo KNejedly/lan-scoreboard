@@ -1,0 +1,194 @@
+{
+  "id": "lan-2026-11",
+  "title": "LAN 11/2026",
+  "labels": {
+    "kills": "Zabití",
+    "deaths": "Úmrtí",
+    "unit_score": "Skóre jednotek",
+    "resource_score": "Skóre surovin",
+    "hero_score": "Skóre hrdinů",
+    "units_killed": "Zničené jednotky",
+    "heroes_killed": "Zabití hrdinové",
+    "place": "Umístění"
+  },
+  "games": [
+    {
+      "id": "hl",
+      "name": "Half-Life",
+      "mark": "HL",
+      "genre": "Deathmatch",
+      "color": "lime",
+      "metric": "Skóre",
+      "sort": "high",
+      "slots": [
+        {
+          "id": "crossfire",
+          "title": "Crossfire",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": null
+        },
+        {
+          "id": "stalkyard",
+          "title": "Stalkyard",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": null
+        }
+      ]
+    },
+    {
+      "id": "cs",
+      "name": "Counter-Strike 1.6",
+      "mark": "CS",
+      "genre": "Týmová hra a deathmatch",
+      "color": "orange",
+      "metric": "Skóre",
+      "sort": "high",
+      "slots": [
+        {
+          "id": "map1a",
+          "title": "Mapa 1 · hra A",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": "Sloupec bonusu za výhru chybí ve výsledném vzorci."
+        },
+        {
+          "id": "map1b",
+          "title": "Mapa 1 · hra B",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": "Sloupec bonusu za výhru chybí ve výsledném vzorci."
+        },
+        {
+          "id": "map2a",
+          "title": "Mapa 2 · hra A",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": "Sloupec bonusu za výhru chybí ve výsledném vzorci."
+        },
+        {
+          "id": "map2b",
+          "title": "Mapa 2 · hra B",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": "Sloupec bonusu za výhru chybí ve výsledném vzorci."
+        },
+        {
+          "id": "pool",
+          "title": "fy_poolparty",
+          "fields": [
+            "kills",
+            "deaths"
+          ],
+          "review": null
+        }
+      ]
+    },
+    {
+      "id": "wc",
+      "name": "Warcraft III",
+      "mark": "W3",
+      "genre": "Strategie v reálném čase",
+      "color": "purple",
+      "metric": "Součet umístění",
+      "sort": "low",
+      "slots": [
+        {
+          "id": "water",
+          "title": "Divoká voda",
+          "fields": [
+            "unit_score",
+            "resource_score",
+            "hero_score",
+            "units_killed",
+            "heroes_killed",
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        },
+        {
+          "id": "fury",
+          "title": "Tranquil Fury",
+          "fields": [
+            "unit_score",
+            "resource_score",
+            "hero_score",
+            "units_killed",
+            "heroes_killed",
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        },
+        {
+          "id": "slalom",
+          "title": "Slalom",
+          "fields": [
+            "unit_score",
+            "resource_score",
+            "hero_score",
+            "units_killed",
+            "heroes_killed",
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        },
+        {
+          "id": "uther",
+          "title": "UtherParty 4.0",
+          "fields": [
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        }
+      ]
+    },
+    {
+      "id": "fo",
+      "name": "FlatOut 2",
+      "mark": "F2",
+      "genre": "Závody a derby",
+      "color": "cyan",
+      "metric": "Součet umístění",
+      "sort": "low",
+      "slots": [
+        {
+          "id": "race",
+          "title": "Výsledné pořadí závodu po finále A/B",
+          "fields": [
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        },
+        {
+          "id": "common",
+          "title": "Společný závod",
+          "fields": [
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        },
+        {
+          "id": "derby",
+          "title": "Destruction derby",
+          "fields": [
+            "place"
+          ],
+          "review": "Umístění je v sešitu zadáváno ručně."
+        }
+      ]
+    }
+  ]
+}
